@@ -1,0 +1,502 @@
+[
+  {
+    "Qid": "AQ_01",
+    "Question": "I prefer to do things with others rather than on my own.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_02",
+    "Question": "I prefer to do things the same way over and over again.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_03",
+    "Question": "If I try to imagine something, I find it very easy to create a picture in my mind.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_04",
+    "Question": "I frequently get so strongly absorbed in one thing that I lose sight of other things.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_05",
+    "Question": "I often notice small sounds when others do not.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_06",
+    "Question": "I usually notice car number plates or similar strings of information.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_07",
+    "Question": "Other people frequently tell me that what I've said is impolite, even though I think it is polite.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_08",
+    "Question": "When I'm reading a story, I can easily imagine what the characters might look like.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_09",
+    "Question": "I am fascinated by dates.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_10",
+    "Question": "In a social group, I can easily keep track of several different people's conversations.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_11",
+    "Question": "I find social situations easy.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_12",
+    "Question": "I tend to notice details that others do not.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_13",
+    "Question": "I would rather go to a library than to a party.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_14",
+    "Question": "I find making up stories easy.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_15",
+    "Question": "I find myself drawn more strongly to people than to things.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_16",
+    "Question": "I tend to have very strong interests, which I get upset about if I can't pursue.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_17",
+    "Question": "I enjoy social chit-chat.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_18",
+    "Question": "When I talk, it isn't always easy for others to get a word in edgewise.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_19",
+    "Question": "I am fascinated by numbers.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_20",
+    "Question": "When I'm reading a story, I find it difficult to work out the characters' intentions.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_21",
+    "Question": "I don't particularly enjoy reading fiction.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_22",
+    "Question": "I find it hard to make new friends.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_23",
+    "Question": "I notice patterns in things all the time.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_24",
+    "Question": "I would rather go to the theater than to a museum.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_25",
+    "Question": "It does not upset me if my daily routine is disturbed.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_26",
+    "Question": "I frequently find that I don't know how to keep a conversation going.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_27",
+    "Question": "I find it easy to 'read between the lines' when someone is talking to me.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_28",
+    "Question": "I usually concentrate more on the whole picture, rather than the small details.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_29",
+    "Question": "I am not very good at remembering phone numbers.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_30",
+    "Question": "I don't usually notice small changes in a situation or a person's appearance.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_31",
+    "Question": "I know how to tell if someone listening to me is getting bored.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_32",
+    "Question": "I find it easy to do more than one thing at once.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_33",
+    "Question": "When I talk on the phone, I'm not sure when it's my turn to speak.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_34",
+    "Question": "I enjoy doing things spontaneously.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_35",
+    "Question": "I am often the last to understand the point of a joke.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_36",
+    "Question": "I find it easy to work out what someone is thinking or feeling just by looking at their face.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_37",
+    "Question": "If there is an interruption, I can switch back to what I was doing very quickly.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_38",
+    "Question": "I am good at social chit-chat.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_39",
+    "Question": "People often tell me that I keep going on and on about the same thing.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_40",
+    "Question": "When I was young, I used to enjoy playing games involving pretending with other children.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_41",
+    "Question": "I like to collect information about categories of things (e.g., types of cars, birds, trains, plants).",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_42",
+    "Question": "I find it difficult to imagine what it would be like to be someone else.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_43",
+    "Question": "I like to carefully plan any activities I participate in.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_44",
+    "Question": "I enjoy social occasions.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_45",
+    "Question": "I find it difficult to work out people's intentions.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_46",
+    "Question": "New situations make me anxious.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_47",
+    "Question": "I enjoy meeting new people.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_48",
+    "Question": "I am a good diplomat.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_49",
+    "Question": "I am not very good at remembering people's date of birth.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  },
+  {
+    "Qid": "AQ_50",
+    "Question": "I find it very easy to play games with children that involve pretending.",
+    "Options": [
+      "Definitely Agree",
+      "Slightly Agree",
+      "Slightly Disagree",
+      "Definitely Disagree"
+    ]
+  }
+]

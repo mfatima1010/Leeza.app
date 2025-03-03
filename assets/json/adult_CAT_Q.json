@@ -1,0 +1,327 @@
+[
+  {
+    "Qid": "CAT_Q_01",
+    "Question": "When I am interacting with someone, I deliberately copy their body language or facial expressions.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_02",
+    "Question": "I monitor my body language or facial expressions so that I appear relaxed.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_03",
+    "Question": "I rarely feel the need to put on an act in order to get through a social situation.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_04",
+    "Question": "I have developed a script to follow in social situations.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_05",
+    "Question": "I will repeat phrases that I have heard others say in the exact same way that I first heard them.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_06",
+    "Question": "I adjust my body language or facial expressions so that I appear interested by the person I am interacting with.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_07",
+    "Question": "In social situations, I feel like I'm 'performing' rather than being myself.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_08",
+    "Question": "In my own social interactions, I use behaviors that I have learned from watching other people interacting.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_09",
+    "Question": "I always think about the impression I make on other people.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_10",
+    "Question": "I need the support of other people in order to socialize.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_11",
+    "Question": "I practice my facial expressions and body language to make sure they look natural.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_12",
+    "Question": "I don’t feel the need to make eye contact with other people if I don’t want to.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_13",
+    "Question": "I have to force myself to interact with people when I am in social situations.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_14",
+    "Question": "I have tried to improve my understanding of social skills by watching other people.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_15",
+    "Question": "I monitor my body language or facial expressions so that I appear interested by the person I am interacting with.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_16",
+    "Question": "When in social situations, I try to find ways to avoid interacting with others.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_17",
+    "Question": "I have researched the rules of social interactions to improve my own social skills.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_18",
+    "Question": "I am always aware of the impression I make on other people.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_19",
+    "Question": "I feel free to be myself when I am with other people.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_20",
+    "Question": "I learn how people use their bodies and faces to interact by watching television or films, or by reading fiction.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_21",
+    "Question": "I adjust my body language or facial expressions so that I appear relaxed.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_22",
+    "Question": "When talking to other people, I feel like the conversation flows naturally.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_23",
+    "Question": "I have spent time learning social skills from television shows and films, and try to use these in my interactions.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_24",
+    "Question": "In social interactions, I do not pay attention to what my face or body are doing.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  },
+  {
+    "Qid": "CAT_Q_25",
+    "Question": "In social situations, I feel like I am pretending to be ‘normal’.",
+    "Options": [
+      "Strongly Disagree",
+      "Disagree",
+      "Somewhat Disagree",
+      "Neither Agree nor Disagree",
+      "Somewhat Agree",
+      "Agree",
+      "Strongly Agree"
+    ]
+  }
+]

@@ -1,0 +1,171 @@
+[
+  {
+    "Qid": "RBQ_2A_01",
+    "Question": "Do you like to arrange items in rows or patterns?",
+    "Options": [
+      "Never or rarely",
+      "One or more times daily (mild or occasional)",
+      "15+ times daily (marked or notable)",
+      "30+ times daily (serious or severe)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_02",
+    "Question": "Do you repetitively fiddle with items? (e.g. spin, twiddle, bang, tap, twist, or flick anything repeatedly?)",
+    "Options": [
+      "Never or rarely",
+      "One or more times daily (mild or occasional)",
+      "15+ times daily (marked or notable)",
+      "30+ times daily (serious or severe)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_03",
+    "Question": "Do you like to spin yourself around and around?",
+    "Options": [
+      "Never or rarely",
+      "One or more times daily (mild or occasional)",
+      "15+ times daily (marked or notable)",
+      "30+ times daily (serious or severe)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_04",
+    "Question": "Do you like to rock back and forth or side to side either when sitting or standing?",
+    "Options": [
+      "Never or rarely",
+      "One or more times daily (mild or occasional)",
+      "15+ times daily (marked or notable)",
+      "30+ times daily (serious or severe)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_05",
+    "Question": "Do you pace or move around repetitively (e.g. walk to and fro across a room, or around the same path in the garden?)",
+    "Options": [
+      "Never or rarely",
+      "One or more times daily (mild or occasional)",
+      "15+ times daily (marked or notable)",
+      "30+ times daily (serious or severe)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_06",
+    "Question": "Do you make repetitive hand and/or finger movements? (e.g. flap, wave, or flick your hands or fingers repetitively?)",
+    "Options": [
+      "Never or rarely",
+      "One or more times daily (mild or occasional)",
+      "15+ times daily (marked or notable)",
+      "30+ times daily (serious or severe)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_07",
+    "Question": "Do you have a fascination with specific objects (e.g. trains, road signs, or other things?)",
+    "Options": ["Never or rarely", "Mild or occassional", "Marked or notable"]
+  },
+  {
+    "Qid": "RBQ_2A_08",
+    "Question": "Do you like to look at objects from particular or unusual angles?",
+    "Options": ["Never or rarely", "Mild or occassional", "Marked or notable"]
+  },
+  {
+    "Qid": "RBQ_2A_09",
+    "Question": "Do you have a special interest in the smell of people or objects?",
+    "Options": ["Never or rarely", "Mild or occassional", "Marked or notable"]
+  },
+  {
+    "Qid": "RBQ_2A_10",
+    "Question": "Do you have a special interest in the feel of different surfaces?",
+    "Options": ["Never or rarely", "Mild or occassional", "Marked or notable"]
+  },
+  {
+    "Qid": "RBQ_2A_11",
+    "Question": "Do you have any special objects you like to carry around?",
+    "Options": ["Never or rarely", "Mild or occassional", "Marked or notable"]
+  },
+  {
+    "Qid": "RBQ_2A_12",
+    "Question": "Do you collect or hoard items of any sort?",
+    "Options": ["Never or rarely", "Mild or occassional", "Marked or notable"]
+  },
+  {
+    "Qid": "RBQ_2A_13",
+    "Question": "Do you insist on things at home remaining the same? (e.g. furniture staying in the same place, things being kept in certain places, or arranged in certain ways?)",
+    "Options": [
+      "Never or rarely",
+      "Mild or occasional(does not affect others)",
+      "Marked or notable(occasionally affects others)",
+      "Serious or severe(affects others on a regular basis)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_14",
+    "Question": "Do you get upset about minor changes to objects (e.g. flecks of dirt on your clothes, minor scratches on objects?)",
+    "Options": [
+      "Never or rarely",
+      "Mild or occasional(does not affect others)",
+      "Marked or notable(occasionally affects others)",
+      "Serious or severe(affects others on a regular basis)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_15",
+    "Question": "Do you insist that aspects of daily routine must remain the same?",
+    "Options": [
+      "Never or rarely",
+      "Mild or occasional(does not affect others)",
+      "Marked or notable(occasionally affects others)",
+      "Serious or severe(affects others on a regular basis)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_16",
+    "Question": "Do you insist on doing things in a certain way or re-doing things until they are 'just right'?",
+    "Options": [
+      "Never or rarely",
+      "Mild or occasional(does not affect others)",
+      "Marked or notable(occasionally affects others)",
+      "Serious or severe(affects others on a regular basis)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_17",
+    "Question": "Do you play the same music, game or video, or read the same book repeatedly?",
+    "Options": [
+      "Never or rarely",
+      "Mild or occasional(does not affect others)",
+      "Marked or notable(occasionally affects others)",
+      "Serious or severe(affects others on a regular basis)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_18",
+    "Question": "Do you insist on wearing the same clothes or refuse to wear new clothes?",
+    "Options": [
+      "Never or rarely",
+      "Mild or occasional(does not affect others)",
+      "Marked or notable(occasionally affects others)",
+      "Serious or severe(affects others on a regular basis)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_19",
+    "Question": "Do you insist on eating the same foods, or a very small range of foods, at every meal?",
+    "Options": [
+      "Never or rarely",
+      "Mild or occasional(does not affect others)",
+      "Marked or notable(occasionally affects others)",
+      "Serious or severe(affects others on a regular basis)"
+    ]
+  },
+  {
+    "Qid": "RBQ_2A_20",
+    "Question": "If you are left to occupy yourself, will you choose from a restricted range of repetitive activities?",
+    "Options": [
+      "A range of different and flexible self - chosen activities",
+      "Some varied and flexible interests but commonly choose the same activities",
+      "Almost always choose from a restricted range of repetitive activities"
+    ]
+  }
+]

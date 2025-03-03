@@ -1,0 +1,52 @@
+[
+  {
+    "Qid": "AQ_10_01",
+    "Question": "I often notice small sounds when others do not.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "AQ_10_02",
+    "Question": "When I’m reading a story, I find it difficult to work out the characters’ intentions.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "AQ_10_03",
+    "Question": "I find it easy to 'read between the lines' when someone is talking to me.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "AQ_10_04",
+    "Question": "I usually concentrate more on the whole picture, rather than the small details.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "AQ_10_05",
+    "Question": "I know how to tell if someone listening to me is getting bored.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "AQ_10_06",
+    "Question": "I find it easy to do more than one thing at once.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "AQ_10_07",
+    "Question": "I find it easy to work out what someone is thinking or feeling just by looking at their face.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "AQ_10_08",
+    "Question": "If there is an interruption, I can switch back to what I was doing very quickly.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "AQ_10_09",
+    "Question": "I like to collect information about categories of things.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "AQ_10_10",
+    "Question": "I find it difficult to work out people’s intentions.",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "Qid": "ASQ_01",
+    "Question": "Does your child smile spontaneously, especially at people?",
+    "Options": ["Yes", "No"]
+  },
+  {
+    "Qid": "ASQ_02",
+    "Question": "Does your child make eye contact with others?",
+    "Options": ["Yes", "No"]
+  },
+  {
+    "Qid": "ASQ_03",
+    "Question": "Does your child respond when called by name?",
+    "Options": ["Yes", "No"]
+  },
+  {
+    "Qid": "ASQ_04",
+    "Question": "Does your child enjoy playing with other children?",
+    "Options": ["Yes", "No"]
+  },
+  {
+    "Qid": "ASQ_05",
+    "Question": "Does your child follow simple instructions?",
+    "Options": ["Yes", "No"]
+  },
+  {
+    "Qid": "ASQ_06",
+    "Question": "Does your child use gestures (like waving) to communicate?",
+    "Options": ["Yes", "No"]
+  },
+  {
+    "Qid": "ASQ_07",
+    "Question": "Does your child show interest in new experiences?",
+    "Options": ["Yes", "No"]
+  },
+  {
+    "Qid": "ASQ_08",
+    "Question": "Does your child display a range of emotions?",
+    "Options": ["Yes", "No"]
+  },
+  {
+    "Qid": "ASQ_09",
+    "Question": "Does your child imitate others during play?",
+    "Options": ["Yes", "No"]
+  },
+  {
+    "Qid": "ASQ_10",
+    "Question": "Does your child initiate social interaction?",
+    "Options": ["Yes", "No"]
+  }
+]

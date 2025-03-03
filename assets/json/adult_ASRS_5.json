@@ -1,0 +1,32 @@
+[
+  {
+    "Qid": "ASRS_5_01",
+    "Question": "How often do you have difficulty concentrating on what people are saying to you even when they are speaking to you directly?",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "ASRS_5_02",
+    "Question": "How often do you leave your seat in meetings or other situations in which you are expected to remain seated?",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "ASRS_5_03",
+    "Question": "How often do you have difficulty unwinding and relaxing when you have time to yourself?",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "ASRS_5_04",
+    "Question": "When you’re in a conversation, how often do you find yourself finishing the sentences of the people you are talking to before they can finish them themselves?",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "ASRS_5_05",
+    "Question": "How often do you put things off until the last minute?",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  },
+  {
+    "Qid": "ASRS_5_06",
+    "Question": "How often do you depend on others to keep your life in order and attend to details?",
+    "Options": ["Never", "Rarely", "Sometimes", "Often", "Very Often"]
+  }
+]
