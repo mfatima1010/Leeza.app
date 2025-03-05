@@ -85,6 +85,7 @@ flutter:
     - assets/icons/ic_talks.svg
     - assets/icons/ic_talks_filled.svg
     - assets/images/google.jpg
+    - assets/images/welcome.jpg
     - assets/images/child.svg
     - assets/images/yourself.svg
     - assets/images/splash.gif

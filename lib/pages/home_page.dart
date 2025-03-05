@@ -57,14 +57,23 @@ class HomeScreenContent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 80),
-            Text(
-              "Welcome to Leeza",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: Colors.grey[800],
-                letterSpacing: 0.8,
-              ),
+            Row(
+              children: [
+                Text(
+                  "Welcome to ",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xFFE5A0FF),
+                    letterSpacing: 0.8,
+                  ),
+                ),
+                Image.asset(
+                  'assets/images/welcome.jpg',
+                  height: 24,
+                  fit: BoxFit.contain,
+                ),
+              ],
             ),
             const SizedBox(height: 8),
             const Text(

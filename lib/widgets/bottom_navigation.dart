@@ -14,6 +14,7 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
+  late PageController _pageController;
 
   final List<Widget> _pages = [
     HomeScreenContent(),
@@ -22,7 +23,31 @@ class _BottomNavBarState extends State<BottomNavBar> {
     ProfilePage(),
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _selectedIndex);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
   void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+      // Animate to the selected page when tapping bottom nav items
+      _pageController.animateToPage(
+        index,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    });
+  }
+
+  void _onPageChanged(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -31,7 +56,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
+      body: PageView(
+        controller: _pageController,
+        onPageChanged: _onPageChanged,
+        children: _pages,
+        // Make page switching smoother
+        physics: const BouncingScrollPhysics(),
+      ),
       floatingActionButton: Container(
         height: 65,
         width: 65,

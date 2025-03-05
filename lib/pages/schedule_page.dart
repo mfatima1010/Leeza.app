@@ -100,220 +100,214 @@ class _SchedulePageState extends State<SchedulePage> {
     final Color yellowishColor = const Color(0xFFFFD27A);
 
     return Scaffold(
-      backgroundColor: yellowishColor.withOpacity(0.1),
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            controller: _scrollController,
-            child: Column(
-              children: [
-                // Gradient header with safe area
-                Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [pinkishColor, yellowishColor],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                  ),
-                  child: SafeArea(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(60, 32, 60, 32),
-                      child: Text(
-                        "Book Your Session",
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium
-                            ?.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 28,
-                            ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
+      backgroundColor: Color.alphaBlend(
+        yellowishColor.withOpacity(0.1),
+        Colors.white,
+      ), // Blend the colors properly
+      body: SingleChildScrollView(
+        controller: _scrollController,
+        child: Column(
+          children: [
+            // Gradient header with safe area
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [pinkishColor, yellowishColor],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
+              ),
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(60, 32, 60, 32),
+                  child: Text(
+                    "Book Your Session",
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 28,
+                        ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildSectionTitle(
-                          context, "Select a Service", Icons.medical_services),
-                      const SizedBox(height: 16),
-                      GridView.count(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        crossAxisCount: 2,
-                        childAspectRatio: 2.5,
-                        mainAxisSpacing: 12,
-                        crossAxisSpacing: 12,
-                        children: services.map((service) {
-                          final bool isSelected = service == selectedService;
-                          return Material(
-                            elevation: isSelected ? 4 : 1,
-                            borderRadius: BorderRadius.circular(25),
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  selectedService = service == selectedService
-                                      ? null
-                                      : service;
-                                });
-                              },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildSectionTitle(
+                      context, "Select a Service", Icons.medical_services),
+                  const SizedBox(height: 16),
+                  GridView.count(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    crossAxisCount: 2,
+                    childAspectRatio: 2.5,
+                    mainAxisSpacing: 12,
+                    crossAxisSpacing: 12,
+                    children: services.map((service) {
+                      final bool isSelected = service == selectedService;
+                      return Material(
+                        elevation: isSelected ? 4 : 1,
+                        borderRadius: BorderRadius.circular(25),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              selectedService =
+                                  service == selectedService ? null : service;
+                            });
+                          },
+                          borderRadius: BorderRadius.circular(25),
+                          child: Container(
+                            decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(25),
+                              color: isSelected ? pinkishColor : Colors.white,
+                              border: Border.all(
+                                color: isSelected
+                                    ? Colors.transparent
+                                    : pinkishColor,
+                                width: 2,
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                service,
+                                style: TextStyle(
                                   color:
-                                      isSelected ? pinkishColor : Colors.white,
-                                  border: Border.all(
-                                    color: isSelected
-                                        ? Colors.transparent
-                                        : pinkishColor,
-                                    width: 2,
-                                  ),
+                                      isSelected ? Colors.white : pinkishColor,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                child: Center(
-                                  child: Text(
-                                    service,
-                                    style: TextStyle(
-                                      color: isSelected
-                                          ? Colors.white
-                                          : pinkishColor,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                      const SizedBox(height: 32),
-                      _buildSectionTitle(
-                          context, "Select a Date", Icons.calendar_today),
-                      const SizedBox(height: 16),
-                      Card(
-                        elevation: 4,
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          side:
-                              BorderSide(color: pinkishColor.withOpacity(0.3)),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TableCalendar(
-                            firstDay: DateTime.utc(2020, 1, 1),
-                            lastDay: DateTime.utc(2030, 12, 31),
-                            focusedDay: _focusedDay,
-                            calendarFormat: _calendarFormat,
-                            selectedDayPredicate: (day) =>
-                                isSameDay(selectedDate, day),
-                            onDaySelected: (selected, focused) {
-                              setState(() {
-                                selectedDate = selected;
-                                _focusedDay = focused;
-                                // Reset time slot when date changes.
-                                selectedTimeSlot = null;
-                              });
-                            },
-                            onFormatChanged: (format) {
-                              setState(() {
-                                _calendarFormat = format;
-                              });
-                            },
-                            headerStyle: HeaderStyle(
-                              formatButtonVisible: false,
-                              titleCentered: true,
-                              titleTextStyle: TextStyle(
-                                color: pinkishColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
-                            calendarStyle: CalendarStyle(
-                              selectedDecoration: BoxDecoration(
-                                color: pinkishColor,
-                                shape: BoxShape.circle,
-                              ),
-                              todayDecoration: BoxDecoration(
-                                color: pinkishColor.withOpacity(0.3),
-                                shape: BoxShape.circle,
+                                textAlign: TextAlign.center,
                               ),
                             ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 32),
-                      _buildSectionTitle(
-                          context, "Select a Time Slot", Icons.access_time),
-                      const SizedBox(height: 16),
-                      GridView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10,
-                          childAspectRatio: 2.5,
+                      );
+                    }).toList(),
+                  ),
+                  const SizedBox(height: 32),
+                  _buildSectionTitle(
+                      context, "Select a Date", Icons.calendar_today),
+                  const SizedBox(height: 16),
+                  Card(
+                    elevation: 4,
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      side: BorderSide(color: pinkishColor.withOpacity(0.3)),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TableCalendar(
+                        firstDay: DateTime.utc(2020, 1, 1),
+                        lastDay: DateTime.utc(2030, 12, 31),
+                        focusedDay: _focusedDay,
+                        calendarFormat: _calendarFormat,
+                        selectedDayPredicate: (day) =>
+                            isSameDay(selectedDate, day),
+                        onDaySelected: (selected, focused) {
+                          setState(() {
+                            selectedDate = selected;
+                            _focusedDay = focused;
+                            // Reset time slot when date changes.
+                            selectedTimeSlot = null;
+                          });
+                        },
+                        onFormatChanged: (format) {
+                          setState(() {
+                            _calendarFormat = format;
+                          });
+                        },
+                        headerStyle: HeaderStyle(
+                          formatButtonVisible: false,
+                          titleCentered: true,
+                          titleTextStyle: TextStyle(
+                            color: pinkishColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
                         ),
-                        itemCount: timeSlots.length,
-                        itemBuilder: (context, index) {
-                          final slot = timeSlots[index];
-                          final bool isBooked = bookedForDate.contains(slot);
-                          final bool isSelected = slot == selectedTimeSlot;
-                          return Card(
-                            elevation: isSelected ? 4 : 1,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            color: isSelected
-                                ? pinkishColor
-                                : isBooked
-                                    ? Colors.grey.shade200
-                                    : Colors.white,
-                            child: InkWell(
-                              onTap: isBooked
-                                  ? null
-                                  : () {
-                                      setState(() {
-                                        selectedTimeSlot = slot;
-                                      });
-                                    },
-                              borderRadius: BorderRadius.circular(12),
-                              child: Center(
-                                child: Text(
-                                  isBooked ? "$slot\n(Booked)" : slot,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: isSelected
-                                        ? Colors.white
-                                        : isBooked
-                                            ? Colors.grey
-                                            : pinkishColor,
-                                    fontWeight: isSelected
-                                        ? FontWeight.bold
-                                        : FontWeight.normal,
-                                  ),
-                                ),
+                        calendarStyle: CalendarStyle(
+                          selectedDecoration: BoxDecoration(
+                            color: pinkishColor,
+                            shape: BoxShape.circle,
+                          ),
+                          todayDecoration: BoxDecoration(
+                            color: pinkishColor.withOpacity(0.3),
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 32),
+                  _buildSectionTitle(
+                      context, "Select a Time Slot", Icons.access_time),
+                  const SizedBox(height: 16),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      childAspectRatio: 2.5,
+                    ),
+                    itemCount: timeSlots.length,
+                    itemBuilder: (context, index) {
+                      final slot = timeSlots[index];
+                      final bool isBooked = bookedForDate.contains(slot);
+                      final bool isSelected = slot == selectedTimeSlot;
+                      return Card(
+                        elevation: isSelected ? 4 : 1,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        color: isSelected
+                            ? pinkishColor
+                            : isBooked
+                                ? Colors.grey.shade200
+                                : Colors.white,
+                        child: InkWell(
+                          onTap: isBooked
+                              ? null
+                              : () {
+                                  setState(() {
+                                    selectedTimeSlot = slot;
+                                  });
+                                },
+                          borderRadius: BorderRadius.circular(12),
+                          child: Center(
+                            child: Text(
+                              isBooked ? "$slot\n(Booked)" : slot,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: isSelected
+                                    ? Colors.white
+                                    : isBooked
+                                        ? Colors.grey
+                                        : pinkishColor,
+                                fontWeight: isSelected
+                                    ? FontWeight.bold
+                                    : FontWeight.normal,
                               ),
                             ),
-                          );
-                        },
-                      ),
-                      const SizedBox(height: 40),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 56,
-                        child: ElevatedButton(
-                          onPressed: (selectedService != null &&
-                                  selectedTimeSlot != null)
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(height: 40),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 56,
+                    child: ElevatedButton(
+                      onPressed:
+                          (selectedService != null && selectedTimeSlot != null)
                               ? () {
                                   // Construct a URL for Cal.com.
                                   // Here, we use the public page link you provided.
@@ -342,75 +336,27 @@ class _SchedulePageState extends State<SchedulePage> {
                                   );
                                 }
                               : null,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: pinkishColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            elevation: 4,
-                          ),
-                          child: Text(
-                            "Schedule It",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge
-                                ?.copyWith(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: pinkishColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
                         ),
+                        elevation: 4,
                       ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          // Updated floating back button with gradient effect
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 300),
-                decoration: BoxDecoration(
-                  gradient: _isScrolled
-                      ? LinearGradient(
-                          colors: [pinkishColor, yellowishColor],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                        )
-                      : null,
-                  color: _isScrolled ? null : Colors.white.withOpacity(0.8),
-                  borderRadius: BorderRadius.circular(30),
-                  boxShadow: _isScrolled
-                      ? [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          )
-                        ]
-                      : null,
-                ),
-                child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(30),
-                    onTap: () => Navigator.of(context).pop(),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(
-                        Icons.arrow_back,
-                        color: _isScrolled ? Colors.white : pinkishColor,
+                      child: Text(
+                        "Schedule It",
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                       ),
                     ),
                   ),
-                ),
+                ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
