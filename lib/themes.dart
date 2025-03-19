@@ -44,7 +44,7 @@ final ThemeData appTheme = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: AppColor.primary,
+      backgroundColor: const Color.fromRGBO(203, 108, 230, 1),
       textStyle:
           AppTextStyles.s16(color: AppColor.white, fontType: FontType.MEDIUM),
     ),

@@ -1,5 +1,570 @@
+// import 'package:flutter/material.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:assessment_leeza_app/pages/assessments/adult_assessment_page.dart';
+// import 'package:assessment_leeza_app/pages/assessments/child_assessment_page.dart';
+// import 'package:assessment_leeza_app/pages/talks_page.dart';
+// import 'package:assessment_leeza_app/pages/schedule_page.dart';
+// import 'package:assessment_leeza_app/pages/profile_page.dart';
+// import 'package:assessment_leeza_app/pages/chatbot_page.dart';
+// import 'package:assessment_leeza_app/pages/upload_story_page.dart';
+// import 'package:assessment_leeza_app/utils/app_colors.dart';
+// import 'package:assessment_leeza_app/widgets/bottom_navigation.dart';
+// import 'package:assessment_leeza_app/pages/login_page.dart';
+
+// class HomePage extends StatefulWidget {
+//   const HomePage({Key? key}) : super(key: key);
+
+//   @override
+//   _HomePageState createState() => _HomePageState();
+// }
+
+// class _HomePageState extends State<HomePage> {
+//   int _selectedIndex = 0;
+
+//   final List<Widget> _pages = [
+//     const HomeScreenContent(),
+//     const TalksPage(),
+//     const SchedulePage(),
+//     ProfilePage(),
+//   ];
+
+//   void _onItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: _pages[_selectedIndex],
+//       bottomNavigationBar: BottomNavBar(),
+//     );
+//   }
+// }
+
+// class HomeScreenContent extends StatelessWidget {
+//   const HomeScreenContent({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: const BoxDecoration(
+//         gradient: LinearGradient(
+//           begin: Alignment.topCenter,
+//           end: Alignment.bottomCenter,
+//           colors: [Colors.white, Color(0xFFFAFAFA)],
+//         ),
+//       ),
+//       child: Padding(
+//         padding: const EdgeInsets.symmetric(horizontal: 24.0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             const SizedBox(height: 80),
+//             RichText(
+//               text: const TextSpan(
+//                 text: "Welcome to ",
+//                 style: TextStyle(
+//                   fontSize: 18,
+//                   fontWeight: FontWeight.w600,
+//                   color: Colors.grey,
+//                   letterSpacing: 0.8,
+//                 ),
+//                 children: [
+//                   TextSpan(
+//                     text: "Leeza",
+//                     style: TextStyle(
+//                       color: Color(0xFFB86AD6), // Purple from logo
+//                     ),
+//                   ),
+//                   TextSpan(
+//                     text: ".",
+//                     style: TextStyle(
+//                       color: Color(0xFF3BA935), // Green from logo
+//                     ),
+//                   ),
+//                   TextSpan(
+//                     text: "app",
+//                     style: TextStyle(
+//                       color: Color(0xFFF5A623), // Orange from logo
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             const SizedBox(height: 8),
+//             const Text(
+//               "Who are you taking\nthe test for?",
+//               style: TextStyle(
+//                 fontSize: 32,
+//                 fontWeight: FontWeight.w700,
+//                 height: 1.2,
+//               ),
+//             ),
+//             const SizedBox(height: 40),
+//             _buildOptionCard(
+//               context,
+//               title: "For Yourself",
+//               subtitle: "Take an assessment for your mental well-being",
+//               imagePath: 'assets/images/yourself.svg',
+//               color: const Color(0xFFF9F3E3),
+//               page: AdultAssessments(),
+//             ),
+//             const SizedBox(height: 16),
+//             _buildOptionCard(
+//               context,
+//               title: "For Your Child",
+//               subtitle: "Assess your child's mental health",
+//               imagePath: 'assets/images/child.svg',
+//               color: const Color(0xFFFFD699),
+//               page: ChildAssessments(),
+//             ),
+//             const SizedBox(height: 16),
+//             _buildBotOptionCard(
+//               context,
+//               title: "Chat with Leeza AI",
+//               subtitle: "Get instant support and guidance",
+//               color: const Color(0xFFF5FAF4),
+//               page: const ChatbotPage(),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildOptionCard(BuildContext context,
+//       {required String title,
+//       required String subtitle,
+//       required String imagePath,
+//       required Color color,
+//       required Widget page}) {
+//     return GestureDetector(
+//       onTap: () {
+//         Navigator.of(context)
+//             .push(MaterialPageRoute(builder: (context) => page));
+//       },
+//       child: Container(
+//         height: 160,
+//         decoration: BoxDecoration(
+//           color: color,
+//           borderRadius: BorderRadius.circular(16),
+//           boxShadow: [
+//             BoxShadow(
+//               color: Colors.black.withOpacity(0.03),
+//               blurRadius: 10,
+//               offset: const Offset(0, 4),
+//             ),
+//           ],
+//         ),
+//         child: Row(
+//           children: [
+//             if (title == "For Your Child")
+//               Padding(
+//                 padding: const EdgeInsets.all(24.0),
+//                 child: SvgPicture.asset(
+//                   imagePath,
+//                   width: 70,
+//                   height: 70,
+//                 ),
+//               ),
+//             Expanded(
+//               child: Padding(
+//                 padding: const EdgeInsets.all(24.0),
+//                 child: Column(
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   mainAxisAlignment: MainAxisAlignment.center,
+//                   children: [
+//                     Text(
+//                       title,
+//                       style: const TextStyle(
+//                         fontSize: 20,
+//                         fontWeight: FontWeight.w600,
+//                       ),
+//                     ),
+//                     const SizedBox(height: 8),
+//                     Text(
+//                       subtitle,
+//                       style: TextStyle(
+//                         fontSize: 14,
+//                         color: Colors.grey[700],
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//             if (title == "For Yourself")
+//               Padding(
+//                 padding: const EdgeInsets.all(24.0),
+//                 child: SvgPicture.asset(
+//                   imagePath,
+//                   width: 70,
+//                   height: 70,
+//                 ),
+//               ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildBotOptionCard(BuildContext context,
+//       {required String title,
+//       required String subtitle,
+//       required Color color,
+//       required Widget page}) {
+//     return GestureDetector(
+//       onTap: () {
+//         Navigator.of(context)
+//             .push(MaterialPageRoute(builder: (context) => page));
+//       },
+//       child: Container(
+//         height: 160,
+//         decoration: BoxDecoration(
+//           color: color,
+//           borderRadius: BorderRadius.circular(16),
+//           boxShadow: [
+//             BoxShadow(
+//               color: Colors.black.withOpacity(0.03),
+//               blurRadius: 10,
+//               offset: const Offset(0, 4),
+//             ),
+//           ],
+//         ),
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Text(
+//                 title,
+//                 style: const TextStyle(
+//                   fontSize: 20,
+//                   fontWeight: FontWeight.w600,
+//                 ),
+//                 textAlign: TextAlign.center,
+//               ),
+//               const SizedBox(height: 8),
+//               Text(
+//                 subtitle,
+//                 style: TextStyle(
+//                   fontSize: 14,
+//                   color: Colors.grey[700],
+//                 ),
+//                 textAlign: TextAlign.center,
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+//2nd
+
+// import 'package:flutter/material.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:assessment_leeza_app/core/auth_service.dart';
+// import 'package:assessment_leeza_app/pages/assessments/adult_assessment_page.dart';
+// import 'package:assessment_leeza_app/pages/assessments/child_assessment_page.dart';
+// import 'package:assessment_leeza_app/pages/talks_page.dart';
+// import 'package:assessment_leeza_app/pages/schedule_page.dart';
+// import 'package:assessment_leeza_app/pages/profile_page.dart';
+// import 'package:assessment_leeza_app/pages/chatbot_page.dart';
+// import 'package:assessment_leeza_app/pages/upload_story_page.dart';
+// import 'package:assessment_leeza_app/utils/app_colors.dart';
+// import 'package:assessment_leeza_app/widgets/bottom_navigation.dart';
+// import 'package:assessment_leeza_app/pages/login_page.dart';
+
+// class HomePage extends StatefulWidget {
+//   const HomePage({Key? key}) : super(key: key);
+
+//   @override
+//   _HomePageState createState() => _HomePageState();
+// }
+
+// class _HomePageState extends State<HomePage> {
+//   final AuthService _authService = AuthService();
+
+//   Future<void> _logout() async {
+//     final error = await _authService.signOut();
+//     if (error == null) {
+//       Navigator.of(context).pushReplacement(
+//         MaterialPageRoute(builder: (context) => const LoginPage()),
+//       );
+//     } else {
+//       ScaffoldMessenger.of(context).showSnackBar(
+//         SnackBar(content: Text(error)),
+//       );
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text("Leeza.app"),
+//         actions: [
+//           IconButton(
+//             icon: const Icon(Icons.logout),
+//             onPressed: _logout,
+//           ),
+//         ],
+//       ),
+//       body: BottomNavBar(), // Let BottomNavBar handle navigation
+//     );
+//   }
+// }
+
+// class HomeScreenContent extends StatelessWidget {
+//   const HomeScreenContent({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: const BoxDecoration(
+//         gradient: LinearGradient(
+//           begin: Alignment.topCenter,
+//           end: Alignment.bottomCenter,
+//           colors: [Colors.white, Color(0xFFFAFAFA)],
+//         ),
+//       ),
+//       child: Padding(
+//         padding: const EdgeInsets.symmetric(horizontal: 24.0),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             const SizedBox(height: 40),
+//             RichText(
+//               text: const TextSpan(
+//                 text: "Welcome to ",
+//                 style: TextStyle(
+//                   fontSize: 18,
+//                   fontWeight: FontWeight.w600,
+//                   color: Colors.grey,
+//                   letterSpacing: 0.8,
+//                 ),
+//                 children: [
+//                   TextSpan(
+//                     text: "L",
+//                     style: TextStyle(
+//                       color: Color(0xFF2E9C3D), // Updated green for L
+//                     ),
+//                   ),
+//                   TextSpan(
+//                     text: "e",
+//                     style: TextStyle(
+//                       color: Color(0xFFF5B400), // Yellow for first e
+//                     ),
+//                   ),
+//                   TextSpan(
+//                     text: "e",
+//                     style: TextStyle(
+//                       color: Color(0xFFCB6BE5), // Purple for second e
+//                     ),
+//                   ),
+//                   TextSpan(
+//                     text: "z",
+//                     style: TextStyle(
+//                       color: Color(0xFF2E9C3D), // Updated green for z
+//                     ),
+//                   ),
+//                   TextSpan(
+//                     text: "a",
+//                     style: TextStyle(
+//                       color: Color(0xFF2E9C3D), // Updated green for a
+//                     ),
+//                   ),
+//                   TextSpan(
+//                     text: ".",
+//                     style: TextStyle(
+//                       color: Color(0xFFCB6BE5), // Purple for .
+//                     ),
+//                   ),
+//                   TextSpan(
+//                     text: "app",
+//                     style: TextStyle(
+//                       color: Color(0xFFF5B400), // Yellow for app
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             const SizedBox(height: 8),
+//             const Text(
+//               "Who are you taking\nthe test for?",
+//               style: TextStyle(
+//                 fontSize: 32,
+//                 fontWeight: FontWeight.w700,
+//                 height: 1.2,
+//               ),
+//             ),
+//             const SizedBox(height: 40),
+//             _buildOptionCard(
+//               context,
+//               title: "For Yourself",
+//               subtitle: "Take an assessment for your mental well-being",
+//               imagePath: 'assets/images/yourself.svg',
+//               color: const Color(0xFFF9F3E3),
+//               page: AdultAssessments(),
+//             ),
+//             const SizedBox(height: 16),
+//             _buildOptionCard(
+//               context,
+//               title: "For Your Child",
+//               subtitle: "Assess your child's mental health",
+//               imagePath: 'assets/images/child.svg',
+//               color: const Color(0xFFFFD699),
+//               page: ChildAssessments(),
+//             ),
+//             const SizedBox(height: 16),
+//             _buildBotOptionCard(
+//               context,
+//               title: "Chat with Leeza AI",
+//               subtitle: "Get instant support and guidance",
+//               color: const Color(0xFFF5FAF4),
+//               page: const ChatbotPage(),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildOptionCard(BuildContext context,
+//       {required String title,
+//       required String subtitle,
+//       required String imagePath,
+//       required Color color,
+//       required Widget page}) {
+//     return GestureDetector(
+//       onTap: () {
+//         Navigator.of(context)
+//             .push(MaterialPageRoute(builder: (context) => page));
+//       },
+//       child: Container(
+//         height: 160,
+//         decoration: BoxDecoration(
+//           color: color,
+//           borderRadius: BorderRadius.circular(16),
+//           boxShadow: [
+//             BoxShadow(
+//               color: Colors.black.withOpacity(0.03),
+//               blurRadius: 10,
+//               offset: const Offset(0, 4),
+//             ),
+//           ],
+//         ),
+//         child: Row(
+//           children: [
+//             if (title == "For Your Child")
+//               Padding(
+//                 padding: const EdgeInsets.all(24.0),
+//                 child: SvgPicture.asset(
+//                   imagePath,
+//                   width: 70,
+//                   height: 70,
+//                 ),
+//               ),
+//             Expanded(
+//               child: Padding(
+//                 padding: const EdgeInsets.all(24.0),
+//                 child: Column(
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   mainAxisAlignment: MainAxisAlignment.center,
+//                   children: [
+//                     Text(
+//                       title,
+//                       style: const TextStyle(
+//                         fontSize: 20,
+//                         fontWeight: FontWeight.w600,
+//                       ),
+//                     ),
+//                     const SizedBox(height: 8),
+//                     Text(
+//                       subtitle,
+//                       style: TextStyle(
+//                         fontSize: 14,
+//                         color: Colors.grey[700],
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//             if (title == "For Yourself")
+//               Padding(
+//                 padding: const EdgeInsets.all(24.0),
+//                 child: SvgPicture.asset(
+//                   imagePath,
+//                   width: 70,
+//                   height: 70,
+//                 ),
+//               ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildBotOptionCard(BuildContext context,
+//       {required String title,
+//       required String subtitle,
+//       required Color color,
+//       required Widget page}) {
+//     return GestureDetector(
+//       onTap: () {
+//         Navigator.of(context)
+//             .push(MaterialPageRoute(builder: (context) => page));
+//       },
+//       child: Container(
+//         height: 160,
+//         decoration: BoxDecoration(
+//           color: color,
+//           borderRadius: BorderRadius.circular(16),
+//           boxShadow: [
+//             BoxShadow(
+//               color: Colors.black.withOpacity(0.03),
+//               blurRadius: 10,
+//               offset: const Offset(0, 4),
+//             ),
+//           ],
+//         ),
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Text(
+//                 title,
+//                 style: const TextStyle(
+//                   fontSize: 20,
+//                   fontWeight: FontWeight.w600,
+//                 ),
+//                 textAlign: TextAlign.center,
+//               ),
+//               const SizedBox(height: 8),
+//               Text(
+//                 subtitle,
+//                 style: TextStyle(
+//                   fontSize: 14,
+//                   color: Colors.grey[700],
+//                 ),
+//                 textAlign: TextAlign.center,
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+//3RD
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:assessment_leeza_app/core/auth_service.dart';
 import 'package:assessment_leeza_app/pages/assessments/adult_assessment_page.dart';
 import 'package:assessment_leeza_app/pages/assessments/child_assessment_page.dart';
 import 'package:assessment_leeza_app/pages/talks_page.dart';
@@ -9,108 +574,153 @@ import 'package:assessment_leeza_app/pages/chatbot_page.dart';
 import 'package:assessment_leeza_app/pages/upload_story_page.dart';
 import 'package:assessment_leeza_app/utils/app_colors.dart';
 import 'package:assessment_leeza_app/widgets/bottom_navigation.dart';
+import 'package:assessment_leeza_app/pages/login_page.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+  final AuthService _authService = AuthService();
 
-  final List<Widget> _pages = [
-    HomeScreenContent(),
-    TalksPage(),
-    SchedulePage(),
-    ProfilePage(),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  Future<void> _logout() async {
+    final error = await _authService.signOut();
+    if (error == null) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const LoginPage()),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(error)),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavBar(),
+      body: HomeScreenContent(), // Directly use HomeScreenContent
+      bottomNavigationBar: BottomNavBar(), // Let BottomNavBar handle navigation
     );
   }
 }
 
 class HomeScreenContent extends StatelessWidget {
+  const HomeScreenContent({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [Colors.white, Color(0xFFFAFAFA)],
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 80),
-            Row(
-              children: [
-                Text(
-                  "Welcome to ",
+      child: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 40),
+              RichText(
+                text: const TextSpan(
+                  text: "Welcome to ",
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 20, // Increased from 18
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFFE5A0FF),
+                    color: Colors.grey,
                     letterSpacing: 0.8,
                   ),
+                  children: [
+                    TextSpan(
+                      text: "L",
+                      style: TextStyle(
+                        color: Color(0xFF2E9C3D), // Updated green for L
+                      ),
+                    ),
+                    TextSpan(
+                      text: "e",
+                      style: TextStyle(
+                        color: Color(0xFFF5B400), // Yellow for first e
+                      ),
+                    ),
+                    TextSpan(
+                      text: "e",
+                      style: TextStyle(
+                        color: Color(0xFFCB6BE5), // Purple for second e
+                      ),
+                    ),
+                    TextSpan(
+                      text: "z",
+                      style: TextStyle(
+                        color: Color(0xFF2E9C3D), // Updated green for z
+                      ),
+                    ),
+                    TextSpan(
+                      text: "a",
+                      style: TextStyle(
+                        color: Color(0xFF2E9C3D), // Updated green for a
+                      ),
+                    ),
+                    TextSpan(
+                      text: ".",
+                      style: TextStyle(
+                        color: Color(0xFFCB6BE5), // Purple for .
+                      ),
+                    ),
+                    TextSpan(
+                      text: "app",
+                      style: TextStyle(
+                        color: Color(0xFFF5B400), // Yellow for app
+                      ),
+                    ),
+                  ],
                 ),
-                Image.asset(
-                  'assets/images/welcome.jpg',
-                  height: 24,
-                  fit: BoxFit.contain,
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              "Who are you taking\nthe test for?",
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.w700,
-                height: 1.2,
               ),
-            ),
-            const SizedBox(height: 40),
-            _buildOptionCard(
-              context,
-              title: "For Yourself",
-              subtitle: "Take an assessment for your mental well-being",
-              imagePath: 'assets/images/yourself.svg',
-              color: Color(0xFFF9F3E3),
-              page: AdultAssessments(),
-            ),
-            const SizedBox(height: 16),
-            _buildOptionCard(
-              context,
-              title: "For Your Child",
-              subtitle: "Assess your child's mental health",
-              imagePath: 'assets/images/child.svg',
-              color: Color(0xFFFFD699),
-              page: ChildAssessments(),
-            ),
-            const SizedBox(height: 16),
-            _buildBotOptionCard(
-              context,
-              title: "Chat with Leeza AI",
-              subtitle: "Get instant support and guidance",
-              color: Color(0xFFF5FAF4),
-              page: const ChatbotPage(),
-            ),
-          ],
+              const SizedBox(height: 8),
+              const Text(
+                "Who are you taking\nthe test for?",
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
+                  height: 1.2,
+                ),
+              ),
+              const SizedBox(height: 40),
+              _buildOptionCard(
+                context,
+                title: "For Yourself",
+                subtitle: "Take an assessment for your mental well-being",
+                imagePath: 'assets/images/yourself.svg',
+                color: const Color(0xFFF9F3E3),
+                page: AdultAssessments(),
+              ),
+              const SizedBox(height: 16),
+              _buildOptionCard(
+                context,
+                title: "For Your Child",
+                subtitle: "Assess your child's mental health",
+                imagePath: 'assets/images/child.svg',
+                color: const Color(0xFFFFD699),
+                page: ChildAssessments(),
+              ),
+              const SizedBox(height: 16),
+              _buildBotOptionCard(
+                context,
+                title: "Chat with Leeza AI",
+                subtitle: "Get instant support and guidance",
+                color: const Color(0xFFF5FAF4),
+                page: const ChatbotPage(),
+              ),
+              const SizedBox(height: 20), // Added to prevent bottom overflow
+            ],
+          ),
         ),
       ),
     );
@@ -136,7 +746,7 @@ class HomeScreenContent extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.03),
               blurRadius: 10,
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -160,12 +770,12 @@ class HomeScreenContent extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       subtitle,
                       style: TextStyle(
@@ -211,7 +821,7 @@ class HomeScreenContent extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.03),
               blurRadius: 10,
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -221,13 +831,13 @@ class HomeScreenContent extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 subtitle,
                 style: TextStyle(
