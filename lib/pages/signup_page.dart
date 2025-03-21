@@ -89,6 +89,7 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
+//       backgroundColor: const Color(0xFFF9F3E3), // Updated background color
 //       appBar: AppBar(title: const Text("Sign Up")),
 //       body: Padding(
 //         padding: const EdgeInsets.all(24.0),
@@ -142,9 +143,13 @@
 //               const SizedBox(height: 24),
 //             ],
 //             if (_otpSent) ...[
-//               const Text("Please check your email for the OTP",
-//                   style: TextStyle(
-//                       color: Colors.blue, fontWeight: FontWeight.bold)),
+//               const Text(
+//                 "Please check your email for the OTP",
+//                 style: TextStyle(
+//                   color: Colors.blue,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//               ),
 //               const SizedBox(height: 16),
 //               TextField(
 //                 controller: _otpController,
@@ -161,7 +166,26 @@
 //                 : ElevatedButton(
 //                     onPressed:
 //                         _otpSent ? _verifyOtpAndSignup : _requestOtpForSignup,
-//                     child: Text(_otpSent ? "Verify OTP & Sign Up" : "Send OTP"),
+//                     style: ElevatedButton.styleFrom(
+//                       backgroundColor: Colors.white, // White background
+//                       foregroundColor: const Color(0xFFCB6CE6), // Pink text
+//                       side: const BorderSide(
+//                         color: Color(0xFFCB6CE6), // Pink border
+//                         width: 2,
+//                       ),
+//                       shape: RoundedRectangleBorder(
+//                         borderRadius:
+//                             BorderRadius.circular(12), // Rounded corners
+//                       ),
+//                       padding: const EdgeInsets.symmetric(
+//                         vertical: 16, // Increased height
+//                         horizontal: 24,
+//                       ),
+//                     ),
+//                     child: Text(
+//                       _otpSent ? "Verify OTP & Sign Up" : "Send OTP",
+//                       style: const TextStyle(fontSize: 16),
+//                     ),
 //                   ),
 //             const SizedBox(height: 40),
 //             Row(
@@ -206,6 +230,7 @@ class _SignupPageState extends State<SignupPage> {
   final _otpController = TextEditingController();
   bool _isLoading = false;
   bool _otpSent = false;
+  bool _emailAlreadyRegistered = false;
 
   Future<void> _requestOtpForSignup() async {
     if (_nameController.text.isEmpty ||
@@ -218,23 +243,46 @@ class _SignupPageState extends State<SignupPage> {
       );
       return;
     }
-    setState(() => _isLoading = true);
-    final error = await _authService.requestOtpForSignup(
+
+    // Show OTP field immediately after clicking "Send OTP"
+    setState(() {
+      _otpSent = true;
+      _isLoading = true;
+      print("DEBUG: _otpSent set to $_otpSent (before API call)");
+    });
+
+    final result = await _authService.requestOtpForSignup(
       name: _nameController.text.trim(),
       email: _emailController.text.trim(),
       phone: _phoneController.text.trim(),
       age: _ageController.text.trim(),
       password: _passwordController.text.trim(),
     );
+
     setState(() => _isLoading = false);
-    if (error == null) {
-      setState(() => _otpSent = true);
+
+    if (result['error'] == null) {
+      setState(() {
+        _emailAlreadyRegistered = result['emailAlreadyRegistered'] ?? false;
+        print(
+            "DEBUG: OTP sent successfully, _emailAlreadyRegistered: $_emailAlreadyRegistered");
+      });
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("OTP sent! Please check your email.")),
+        SnackBar(
+          content: Text(
+            _emailAlreadyRegistered
+                ? "Email already registered. We’ve sent an OTP to verify your identity."
+                : "OTP sent! Please check your email.",
+          ),
+        ),
       );
     } else {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(error)));
+      // Show error but keep the OTP field visible
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(result['error'])),
+      );
+      // Optionally reset _otpSent to false if you want to hide the field on error
+      // setState(() => _otpSent = false);
     }
   }
 
@@ -263,6 +311,9 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   void dispose() {
+    if (_otpSent) {
+      _authService.signOut();
+    }
     _nameController.dispose();
     _emailController.dispose();
     _phoneController.dispose();
@@ -274,8 +325,9 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
+    print("DEBUG: Building SignupPage, _otpSent = $_otpSent");
     return Scaffold(
-      backgroundColor: const Color(0xFFF9F3E3), // Updated background color
+      backgroundColor: const Color(0xFFF9F3E3),
       appBar: AppBar(title: const Text("Sign Up")),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -327,8 +379,7 @@ class _SignupPageState extends State<SignupPage> {
                 obscureText: true,
               ),
               const SizedBox(height: 24),
-            ],
-            if (_otpSent) ...[
+            ] else ...[
               const Text(
                 "Please check your email for the OTP",
                 style: TextStyle(
@@ -353,18 +404,17 @@ class _SignupPageState extends State<SignupPage> {
                     onPressed:
                         _otpSent ? _verifyOtpAndSignup : _requestOtpForSignup,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white, // White background
-                      foregroundColor: const Color(0xFFCB6CE6), // Pink text
+                      backgroundColor: Colors.white,
+                      foregroundColor: const Color(0xFFCB6CE6),
                       side: const BorderSide(
-                        color: Color(0xFFCB6CE6), // Pink border
+                        color: Color(0xFFCB6CE6),
                         width: 2,
                       ),
                       shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(12), // Rounded corners
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       padding: const EdgeInsets.symmetric(
-                        vertical: 16, // Increased height
+                        vertical: 16,
                         horizontal: 24,
                       ),
                     ),

@@ -1,152 +1,16 @@
 // import 'package:supabase_flutter/supabase_flutter.dart';
-// import 'package:google_sign_in/google_sign_in.dart';
-// import 'supabase_client.dart'; // Ensure correct import
-
-// class AuthService {
-//   final SupabaseClient supabase = SupabaseClientHelper.supabase;
-
-//   // Google Sign-In Method
-//   Future<bool> signInWithGoogle() async {
-//     try {
-//       final GoogleSignIn googleSignIn = GoogleSignIn(scopes: ['email']);
-//       final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
-
-//       if (googleUser == null) {
-//         print("❌ Google sign-in was cancelled.");
-//         return false; // User cancelled login
-//       }
-
-//       final GoogleSignInAuthentication googleAuth =
-//           await googleUser.authentication;
-
-//       // Use OAuthProvider.google
-//       final AuthResponse response = await supabase.auth.signInWithIdToken(
-//         provider: OAuthProvider.google,
-//         idToken: googleAuth.idToken!,
-//       );
-
-//       if (response.session != null) {
-//         print("✅ Successfully signed in: ${response.session?.user?.email}");
-//         return true;
-//       } else {
-//         print("❌ Google authentication failed.");
-//         return false;
-//       }
-//     } catch (error) {
-//       print("⚠️ Error signing in with Google: $error");
-//       return false;
-//     }
-//   }
-
-//   // Sign Out Method
-//   Future<void> signOut() async {
-//     try {
-//       await supabase.auth.signOut();
-//       print("✅ Signed out successfully.");
-//     } catch (e) {
-//       print("⚠️ Error during sign out: $e");
-//     }
-//   }
-
-//   // Check if user is authenticated
-//   bool isAuthenticated() {
-//     return supabase.auth.currentSession != null;
-//   }
-// }
-
-//2nd
-// import 'package:supabase_flutter/supabase_flutter.dart';
 // import 'supabase_client.dart';
 
 // class AuthService {
 //   final SupabaseClient supabase = SupabaseClientHelper.supabase;
 
-//   /// Signs up a new user using email and password.
-//   /// Extra user details (name, phone, age) are stored as metadata.
-//   Future<bool> signUpWithEmail({
-//     required String name,
-//     required String email,
-//     required String phone,
-//     required String age,
-//     required String password,
-//   }) async {
-//     try {
-//       final response = await supabase.auth.signUp(
-//         email: email,
-//         password: password,
-//         data: {
-//           'name': name,
-//           'phone': phone,
-//           'age': age,
-//         },
-//       );
-//       if (response.user != null) {
-//         print("✅ Sign up successful: ${response.user!.email}");
-//         return true;
-//       } else {
-//         print("❌ Sign up failed: Unknown error");
-//         return false;
-//       }
-//     } catch (e) {
-//       print("⚠️ Error during sign up: $e");
-//       return false;
-//     }
-//   }
-
-//   /// Signs in an existing user using email and password.
-//   Future<bool> signInWithEmail(String email, String password) async {
-//     try {
-//       final response = await supabase.auth.signInWithPassword(
-//         email: email,
-//         password: password,
-//       );
-//       if (response.session != null) {
-//         print("✅ Sign in successful: ${response.session!.user!.email}");
-//         return true;
-//       } else {
-//         print("❌ Sign in failed: Unknown error");
-//         return false;
-//       }
-//     } catch (e) {
-//       print("⚠️ Error during sign in: $e");
-//       return false;
-//     }
-//   }
-
-//   /// Signs out the current user.
-//   Future<void> signOut() async {
-//     try {
-//       await supabase.auth.signOut();
-//       print("✅ Signed out successfully.");
-//     } catch (e) {
-//       print("⚠️ Error during sign out: $e");
-//     }
-//   }
-
-//   /// Checks if the user is currently authenticated.
-//   bool isAuthenticated() {
-//     return supabase.auth.currentSession != null;
-//   }
-// }
-
-//3rd
-
-// import 'package:supabase_flutter/supabase_flutter.dart';
-// import 'supabase_client.dart';
-
-// class AuthService {
-//   final SupabaseClient supabase = SupabaseClientHelper.supabase;
-
-//   /// Signs in with email and password
 //   Future<String?> signInWithEmail(String email, String password) async {
 //     try {
 //       final response = await supabase.auth.signInWithPassword(
 //         email: email,
 //         password: password,
 //       );
-//       if (response.session != null) {
-//         return null; // Success
-//       }
+//       if (response.session != null) return null;
 //       return "Failed to sign in";
 //     } on AuthException catch (e) {
 //       return e.message;
@@ -155,7 +19,6 @@
 //     }
 //   }
 
-//   /// Requests an OTP for signup (also stores user data)
 //   Future<String?> requestOtpForSignup({
 //     required String name,
 //     required String email,
@@ -164,22 +27,15 @@
 //     required String password,
 //   }) async {
 //     try {
-//       // Sign up the user (this stores the user data)
 //       await supabase.auth.signUp(
 //         email: email,
 //         password: password,
-//         data: {
-//           'name': name,
-//           'phone': phone,
-//           'age': age,
-//         },
+//         data: {'name': name, 'phone': phone, 'age': age},
 //       );
-
-//       // Request OTP for verification
 //       await supabase.auth.signInWithOtp(
 //         email: email,
-//       );
-//       return null; // Success
+//       ); // redirectTo is handled in Supabase.initialize
+//       return null;
 //     } on AuthException catch (e) {
 //       return e.message;
 //     } catch (e) {
@@ -187,21 +43,14 @@
 //     }
 //   }
 
-//   /// Verifies OTP and completes signup (auto-logs in)
 //   Future<String?> verifyOtpAndSignup({
 //     required String email,
 //     required String otp,
 //   }) async {
 //     try {
-//       final response = await supabase.auth.verifyOTP(
-//         email: email,
-//         token: otp,
-//         type: OtpType.signup,
-//       );
-//       if (response.session != null) {
-//         return null; // Success, user is logged in
-//       }
-//       return "Failed to verify OTP";
+//       // Use currentSession instead of getSession
+//       if (supabase.auth.currentSession != null) return null;
+//       return "Failed to verify OTP or session not found";
 //     } on AuthException catch (e) {
 //       return e.message;
 //     } catch (e) {
@@ -209,14 +58,12 @@
 //     }
 //   }
 
-//   /// Requests an OTP for password reset
 //   Future<String?> requestOtp(String email) async {
 //     try {
 //       await supabase.auth.signInWithOtp(
 //         email: email,
-//         emailRedirectTo: 'io.supabase.flutterquickstart://login-callback/',
-//       );
-//       return null; // Success
+//       ); // redirectTo is handled in Supabase.initialize
+//       return null;
 //     } on AuthException catch (e) {
 //       return e.message;
 //     } catch (e) {
@@ -224,25 +71,16 @@
 //     }
 //   }
 
-//   /// Resets password with OTP
 //   Future<String?> resetPasswordWithOtp({
 //     required String email,
 //     required String otp,
 //     required String newPassword,
 //   }) async {
 //     try {
-//       // Verify the OTP
-//       await supabase.auth.verifyOTP(
-//         email: email,
-//         token: otp,
-//         type: OtpType.recovery,
-//       );
-
-//       // Update the password
-//       await supabase.auth.updateUser(
-//         UserAttributes(password: newPassword),
-//       );
-//       return null; // Success
+//       // Update password directly; OTP verification handled via session
+//       await supabase.auth.updateUser(UserAttributes(password: newPassword));
+//       if (supabase.auth.currentSession != null) return null;
+//       return "Failed to reset password";
 //     } on AuthException catch (e) {
 //       return e.message;
 //     } catch (e) {
@@ -250,75 +88,155 @@
 //     }
 //   }
 
-//   /// Signs out the current user
 //   Future<String?> signOut() async {
 //     try {
 //       await supabase.auth.signOut();
-//       return null; // Success
+//       return null;
 //     } catch (e) {
 //       return "Error signing out: $e";
 //     }
 //   }
 
-//   /// Checks if the user is authenticated
 //   bool isAuthenticated() {
 //     return supabase.auth.currentSession != null;
 //   }
 // }
 
+//part 2
+// import 'package:assessment_leeza_app/core/supabase_client.dart';
+// import 'package:supabase_flutter/supabase_flutter.dart';
+
+// class AuthService {
+//   final supabase = SupabaseClientHelper.supabase;
+
+//   Future<String?> signInWithEmail(String email, String password) async {
+//     try {
+//       await supabase.auth.signInWithPassword(email: email, password: password);
+//       return null;
+//     } on AuthException catch (e) {
+//       return e.message;
+//     } catch (e) {
+//       return "Unexpected error: $e";
+//     }
+//   }
+
+//   Future<String?> requestOtp(String email) async {
+//     try {
+//       await supabase.auth.signInWithOtp(email: email);
+//       return null;
+//     } on AuthException catch (e) {
+//       return e.message;
+//     } catch (e) {
+//       return "Unexpected error: $e";
+//     }
+//   }
+
+//   Future<String?> resetPasswordWithOtp({
+//     required String email,
+//     required String otp,
+//     required String newPassword,
+//   }) async {
+//     try {
+//       await supabase.auth.verifyOTP(
+//         email: email,
+//         token: otp,
+//         type: OtpType.recovery,
+//       );
+//       await supabase.auth.updateUser(
+//         UserAttributes(password: newPassword),
+//       );
+//       return null;
+//     } on AuthException catch (e) {
+//       return e.message;
+//     } catch (e) {
+//       return "Unexpected error: $e";
+//     }
+//   }
+
+//   Future<Map<String, dynamic>> requestOtpForSignup({
+//     required String name,
+//     required String email,
+//     required String phone,
+//     required String age,
+//     required String password,
+//   }) async {
+//     try {
+//       // Sign out any existing session to avoid conflicts
+//       await supabase.auth.signOut();
+//       bool emailAlreadyRegistered = false;
+
+//       // Attempt to sign up the user
+//       try {
+//         await supabase.auth.signUp(
+//           email: email,
+//           password: password,
+//           data: {'name': name, 'phone': phone, 'age': age},
+//         );
+//       } on AuthException catch (e) {
+//         if (e.message.toLowerCase().contains('email already registered')) {
+//           emailAlreadyRegistered = true;
+//           print("DEBUG: Email already registered, proceeding to send OTP");
+//         } else {
+//           return {'error': e.message, 'emailAlreadyRegistered': false};
+//         }
+//       }
+
+//       // Send OTP to the email (for both new and existing users)
+//       await supabase.auth.signInWithOtp(email: email);
+//       return {
+//         'error': null,
+//         'emailAlreadyRegistered': emailAlreadyRegistered,
+//       };
+//     } on AuthException catch (e) {
+//       return {'error': e.message, 'emailAlreadyRegistered': false};
+//     } catch (e) {
+//       return {'error': "Unexpected error: $e", 'emailAlreadyRegistered': false};
+//     }
+//   }
+
+//   Future<String?> verifyOtpAndSignup({
+//     required String email,
+//     required String otp,
+//   }) async {
+//     try {
+//       await supabase.auth.verifyOTP(
+//         email: email,
+//         token: otp,
+//         type: OtpType.signup,
+//       );
+//       if (supabase.auth.currentSession == null) {
+//         return "Failed to create session after OTP verification";
+//       }
+//       return null;
+//     } on AuthException catch (e) {
+//       return e.message;
+//     } catch (e) {
+//       return "Unexpected error: $e";
+//     }
+//   }
+
+//   Future<String?> signOut() async {
+//     try {
+//       await supabase.auth.signOut();
+//       return null;
+//     } on AuthException catch (e) {
+//       return e.message;
+//     } catch (e) {
+//       return "Unexpected error: $e";
+//     }
+//   }
+// }
+
+import 'package:assessment_leeza_app/core/supabase_client.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'supabase_client.dart';
 
 class AuthService {
-  final SupabaseClient supabase = SupabaseClientHelper.supabase;
+  final supabase = SupabaseClientHelper.supabase;
 
   Future<String?> signInWithEmail(String email, String password) async {
     try {
-      final response = await supabase.auth.signInWithPassword(
-        email: email,
-        password: password,
-      );
-      if (response.session != null) return null;
-      return "Failed to sign in";
-    } on AuthException catch (e) {
-      return e.message;
-    } catch (e) {
-      return "Unexpected error: $e";
-    }
-  }
-
-  Future<String?> requestOtpForSignup({
-    required String name,
-    required String email,
-    required String phone,
-    required String age,
-    required String password,
-  }) async {
-    try {
-      await supabase.auth.signUp(
-        email: email,
-        password: password,
-        data: {'name': name, 'phone': phone, 'age': age},
-      );
-      await supabase.auth.signInWithOtp(
-        email: email,
-      ); // redirectTo is handled in Supabase.initialize
+      await supabase.auth.signInWithPassword(email: email, password: password);
       return null;
-    } on AuthException catch (e) {
-      return e.message;
-    } catch (e) {
-      return "Unexpected error: $e";
-    }
-  }
-
-  Future<String?> verifyOtpAndSignup({
-    required String email,
-    required String otp,
-  }) async {
-    try {
-      // Use currentSession instead of getSession
-      if (supabase.auth.currentSession != null) return null;
-      return "Failed to verify OTP or session not found";
     } on AuthException catch (e) {
       return e.message;
     } catch (e) {
@@ -330,7 +248,9 @@ class AuthService {
     try {
       await supabase.auth.signInWithOtp(
         email: email,
-      ); // redirectTo is handled in Supabase.initialize
+        emailRedirectTo: 'io.supabase.flutterquickstart://login-callback/',
+        shouldCreateUser: false, // Don't create a new user for password reset
+      );
       return null;
     } on AuthException catch (e) {
       return e.message;
@@ -345,10 +265,74 @@ class AuthService {
     required String newPassword,
   }) async {
     try {
-      // Update password directly; OTP verification handled via session
-      await supabase.auth.updateUser(UserAttributes(password: newPassword));
-      if (supabase.auth.currentSession != null) return null;
-      return "Failed to reset password";
+      await supabase.auth.verifyOTP(
+        email: email,
+        token: otp,
+        type: OtpType.recovery,
+      );
+      await supabase.auth.updateUser(
+        UserAttributes(password: newPassword),
+      );
+      return null;
+    } on AuthException catch (e) {
+      return e.message;
+    } catch (e) {
+      return "Unexpected error: $e";
+    }
+  }
+
+  Future<Map<String, dynamic>> requestOtpForSignup({
+    required String name,
+    required String email,
+    required String phone,
+    required String age,
+    required String password,
+  }) async {
+    try {
+      await supabase.auth.signOut();
+      bool emailAlreadyRegistered = false;
+
+      try {
+        await supabase.auth.signUp(
+          email: email,
+          password: password,
+          data: {'name': name, 'phone': phone, 'age': age},
+        );
+      } on AuthException catch (e) {
+        if (e.message.toLowerCase().contains('email already registered')) {
+          emailAlreadyRegistered = true;
+          print("DEBUG: Email already registered, proceeding to send OTP");
+        } else {
+          return {'error': e.message, 'emailAlreadyRegistered': false};
+        }
+      }
+
+      await supabase.auth.signInWithOtp(email: email);
+      return {
+        'error': null,
+        'emailAlreadyRegistered': emailAlreadyRegistered,
+      };
+    } on AuthException catch (e) {
+      return {'error': e.message, 'emailAlreadyRegistered': false};
+    } catch (e) {
+      return {'error': "Unexpected error: $e", 'emailAlreadyRegistered': false};
+    }
+  }
+
+  Future<String?> verifyOtpAndSignup({
+    required String email,
+    required String otp,
+  }) async {
+    try {
+      await supabase.auth.verifyOTP(
+        email: email,
+        token: otp,
+        type: OtpType.signup,
+      );
+      if (supabase.auth.currentSession == null) {
+        return "Failed to create session after OTP verification";
+      }
+      return null;
     } on AuthException catch (e) {
       return e.message;
     } catch (e) {
@@ -360,12 +344,10 @@ class AuthService {
     try {
       await supabase.auth.signOut();
       return null;
+    } on AuthException catch (e) {
+      return e.message;
     } catch (e) {
-      return "Error signing out: $e";
+      return "Unexpected error: $e";
     }
-  }
-
-  bool isAuthenticated() {
-    return supabase.auth.currentSession != null;
   }
 }
